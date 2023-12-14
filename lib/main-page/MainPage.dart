@@ -12,11 +12,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
                 "images/logo.png",
@@ -27,19 +26,32 @@ class _MainPageState extends State<MainPage> {
                 name: "Students",
                 onPressed: () {},
               ),
+              SizedBox(
+                width: 5,
+              ),
               MainButton(
                 name: "Employees",
                 onPressed: () {},
+              ),
+              SizedBox(
+                width: 5,
               ),
               MainButton(
                 name: "Guests",
                 onPressed: () {},
               ),
-              SizedBox(
-                width: 100,
-              )
             ],
           ),
+          Image.asset(
+            "images/logo.png",
+            width: 200,
+            height: 200,
+          ),
+          Container(
+            width: 10,
+            height: 10,
+            color: Colors.blue,
+          )
         ],
       ),
     );
