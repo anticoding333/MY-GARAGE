@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
           Image.asset(
-            "images/logo.png",
+            "images/test.png",
             width: 200,
             height: 200,
           ),
