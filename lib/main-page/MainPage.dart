@@ -48,8 +48,8 @@ class _MainPageState extends State<MainPage> {
             height: 200,
           ),
           Container(
-            width: 10,
-            height: 10,
+            width: 400,
+            height: 400,
             color: Colors.blue,
           )
         ],
