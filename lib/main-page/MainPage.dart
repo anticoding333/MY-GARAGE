@@ -24,7 +24,9 @@ class _MainPageState extends State<MainPage> {
               ),
               MainButton(
                 name: "Students",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/StudentsPage');
+                },
               ),
               SizedBox(
                 width: 5,
@@ -47,10 +49,56 @@ class _MainPageState extends State<MainPage> {
             width: 200,
             height: 200,
           ),
-          Container(
-            width: 400,
-            height: 400,
-            color: Colors.blue,
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 500,
+                  height: 300,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.blue),
+                  child: ListView(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 400,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+                        child: Container(
+                          width: 300,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+                        child: Container(
+                          width: 300,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
           )
         ],
       ),
