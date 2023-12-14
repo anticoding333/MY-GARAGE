@@ -1,15 +1,14 @@
-import 'package:desktopapp/students-page/StudentsPageUtils.dart';
+import 'package:desktopapp/employee-page/EmployeesPageUtils.dart';
 import 'package:flutter/material.dart';
 
-class StudentsPage extends StatefulWidget {
-  const StudentsPage({super.key});
+class EmployeesPage extends StatefulWidget {
+  const EmployeesPage({super.key});
 
   @override
-  State<StudentsPage> createState() => _StudentsPageState();
+  State<EmployeesPage> createState() => _EmployeesPageState();
 }
 
-class _StudentsPageState extends State<StudentsPage> {
-  List<String> students = ['Name', 'ID', 'License.NO', 'Car'].toList();
+class _EmployeesPageState extends State<EmployeesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +42,7 @@ class _StudentsPageState extends State<StudentsPage> {
                   height: 130,
                   child: Center(
                     child: Text(
-                      "Students",
+                      "Employees",
                       style: TextStyle(color: Colors.white, fontSize: 25),
                     ),
                   ),
@@ -74,7 +73,7 @@ class _StudentsPageState extends State<StudentsPage> {
             )
           ],
         ),
-        StudentGrid(
+        EmplyeeGrid(
             name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
       ]),
     );

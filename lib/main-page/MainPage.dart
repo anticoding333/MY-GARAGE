@@ -33,14 +33,18 @@ class _MainPageState extends State<MainPage> {
               ),
               MainButton(
                 name: "Employees",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/EmplyeesPage');
+                },
               ),
               SizedBox(
                 width: 5,
               ),
               MainButton(
                 name: "Guests",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/GuestsPage');
+                },
               ),
             ],
           ),

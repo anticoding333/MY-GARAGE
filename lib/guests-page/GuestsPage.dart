@@ -1,14 +1,14 @@
-import 'package:desktopapp/students-page/StudentsPageUtils.dart';
+import 'package:desktopapp/guests-page/GuestsPageUtils.dart';
 import 'package:flutter/material.dart';
 
-class StudentsPage extends StatefulWidget {
-  const StudentsPage({super.key});
+class GuestsPage extends StatefulWidget {
+  const GuestsPage({super.key});
 
   @override
-  State<StudentsPage> createState() => _StudentsPageState();
+  State<GuestsPage> createState() => _GuestsPageState();
 }
 
-class _StudentsPageState extends State<StudentsPage> {
+class _GuestsPageState extends State<GuestsPage> {
   List<String> students = ['Name', 'ID', 'License.NO', 'Car'].toList();
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _StudentsPageState extends State<StudentsPage> {
                   height: 130,
                   child: Center(
                     child: Text(
-                      "Students",
+                      "Guests",
                       style: TextStyle(color: Colors.white, fontSize: 25),
                     ),
                   ),
@@ -74,7 +74,7 @@ class _StudentsPageState extends State<StudentsPage> {
             )
           ],
         ),
-        StudentGrid(
+        GuestGrid(
             name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
       ]),
     );

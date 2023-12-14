@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class StudentGrid extends StatelessWidget {
+class EmplyeeGrid extends StatelessWidget {
   final String name;
   final String ID;
   final String license_number;
   final String car;
 
-  StudentGrid({
+  EmplyeeGrid({
     Key? key,
     required this.name,
     required this.ID,
