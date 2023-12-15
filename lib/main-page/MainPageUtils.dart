@@ -17,7 +17,7 @@ class MainButton extends StatelessWidget {
       height: 50,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: Colors.blue,
+        color: Color(0xFF5ddce2),
         borderRadius: BorderRadius.all(Radius.circular(50)),
       ),
       child: TextButton(

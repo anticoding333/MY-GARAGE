@@ -9,11 +9,15 @@ class EmployeesPage extends StatefulWidget {
 }
 
 class _EmployeesPageState extends State<EmployeesPage> {
+  List<String> students = ['Name', 'ID', 'License.NO', 'Car'].toList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          SizedBox(
+            width: 15,
+          ),
           FloatingActionButton(
             onPressed: () {
               Navigator.pushReplacementNamed(context, '/MainPage');
@@ -28,8 +32,8 @@ class _EmployeesPageState extends State<EmployeesPage> {
                       bottomLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12)),
                   color: Colors.orange),
-              width: 150,
-              height: 100,
+              width: 200,
+              height: 90,
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
                 child: Container(
@@ -43,7 +47,10 @@ class _EmployeesPageState extends State<EmployeesPage> {
                   child: Center(
                     child: Text(
                       "Employees",
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -52,7 +59,7 @@ class _EmployeesPageState extends State<EmployeesPage> {
           ),
         ]),
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FloatingActionButton(
               onPressed: () {},
@@ -61,6 +68,8 @@ class _EmployeesPageState extends State<EmployeesPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
                 width: 300,
                 height: 50,
                 child: TextField(
@@ -70,10 +79,21 @@ class _EmployeesPageState extends State<EmployeesPage> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
-        EmplyeeGrid(
+        SizedBox(
+          height: 2,
+        ),
+        Container(
+          height: 1,
+          alignment: Alignment.center,
+          color: Colors.black,
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        EmployeesGrid(
             name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
       ]),
     );

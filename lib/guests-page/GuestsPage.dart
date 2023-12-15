@@ -1,4 +1,4 @@
-import 'package:desktopapp/guests-page/GuestsPageUtils.dart';
+import 'package:desktopapp/students-page/StudentsPageUtils.dart';
 import 'package:flutter/material.dart';
 
 class GuestsPage extends StatefulWidget {
@@ -15,6 +15,9 @@ class _GuestsPageState extends State<GuestsPage> {
     return Scaffold(
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          SizedBox(
+            width: 15,
+          ),
           FloatingActionButton(
             onPressed: () {
               Navigator.pushReplacementNamed(context, '/MainPage');
@@ -29,8 +32,8 @@ class _GuestsPageState extends State<GuestsPage> {
                       bottomLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12)),
                   color: Colors.orange),
-              width: 150,
-              height: 100,
+              width: 200,
+              height: 90,
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
                 child: Container(
@@ -44,7 +47,10 @@ class _GuestsPageState extends State<GuestsPage> {
                   child: Center(
                     child: Text(
                       "Guests",
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -53,7 +59,7 @@ class _GuestsPageState extends State<GuestsPage> {
           ),
         ]),
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FloatingActionButton(
               onPressed: () {},
@@ -62,6 +68,8 @@ class _GuestsPageState extends State<GuestsPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
                 width: 300,
                 height: 50,
                 child: TextField(
@@ -71,10 +79,21 @@ class _GuestsPageState extends State<GuestsPage> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
-        GuestGrid(
+        SizedBox(
+          height: 2,
+        ),
+        Container(
+          height: 1,
+          alignment: Alignment.center,
+          color: Colors.black,
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        StudentGrid(
             name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
       ]),
     );

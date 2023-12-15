@@ -16,44 +16,56 @@ class StudentGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Container(
-          height: 40,
-          width: 60,
+          height: 60,
+          width: 150,
           color: Colors.orangeAccent,
-          child: Text(name),
+          child: Text(
+            name,
+            style: TextStyle(color: Colors.black, fontSize: 30),
+          ),
           alignment: Alignment.center,
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Container(
-          height: 40,
-          width: 60,
+          height: 60,
+          width: 150,
           color: Colors.orangeAccent,
-          child: Text(ID),
+          child: Text(
+            ID,
+            style: TextStyle(color: Colors.black, fontSize: 30),
+          ),
           alignment: Alignment.center,
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Container(
-          height: 40,
-          width: 60,
+          height: 60,
+          width: 150,
           color: Colors.orangeAccent,
-          child: Text(license_number),
+          child: Text(
+            license_number,
+            style: TextStyle(color: Colors.black, fontSize: 25),
+          ),
           alignment: Alignment.center,
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: Container(
-          height: 40,
-          width: 60,
+          height: 60,
+          width: 150,
           color: Colors.orangeAccent,
-          child: Text(car),
+          child: Text(
+            car,
+            style: TextStyle(color: Colors.black, fontSize: 30),
+          ),
           alignment: Alignment.center,
         ),
       ),
