@@ -13,12 +13,33 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            "Login",
-            style: TextStyle(fontSize: 50, fontStyle: FontStyle.italic),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "images/logo2.png",
+                width: 100,
+                height: 100,
+              ),
+              Container(
+                width: 2,
+                height: 88,
+                color: Colors.black,
+              ),
+              SizedBox(
+                width: 3,
+              ),
+              Text(
+                "MYGARAGE",
+                style: TextStyle(
+                    color: Color(0xff020219),
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold),
+              )
+            ],
           ),
           SizedBox(
-            height: 50,
+            height: 10,
           ),
           Container(
             decoration: BoxDecoration(
