@@ -1,4 +1,10 @@
+import 'dart:io';
+
+import 'package:desktopapp/students-page/StudentsPage.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart' as Path;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,6 +14,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  DataBaseHelper db = DataBaseHelper.instance;
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,3 +107,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
