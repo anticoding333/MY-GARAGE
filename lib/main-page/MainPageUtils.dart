@@ -4,7 +4,7 @@ class MainButton extends StatelessWidget {
   final String name;
   final VoidCallback onPressed;
 
-  MainButton({
+  const MainButton({
     Key? key,
     required this.name,
     required this.onPressed,
@@ -15,7 +15,7 @@ class MainButton extends StatelessWidget {
     return Container(
       width: 125,
       height: 50,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         color: Color(0xFF5ddce2),
         borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -24,7 +24,7 @@ class MainButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           name,
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );

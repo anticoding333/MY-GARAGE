@@ -1,10 +1,6 @@
-import 'dart:io';
 
 import 'package:desktopapp/students-page/StudentsPage.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart' as Path;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -35,10 +31,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 88,
                 color: Colors.black,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 3,
               ),
-              Text(
+              const Text(
                 "MYGARAGE",
                 style: TextStyle(
                     color: Color(0xff020219),
@@ -47,11 +43,11 @@ class _LoginPageState extends State<LoginPage> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Colors.blueGrey,
                 borderRadius: BorderRadius.all(Radius.circular(12))),
             width: 400,
@@ -61,8 +57,8 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: TextField(
                       decoration: InputDecoration(
                           hintText: "Email",
@@ -70,8 +66,8 @@ class _LoginPageState extends State<LoginPage> {
                           filled: true),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: TextField(
                       decoration: InputDecoration(
                           hintText: "Password",
@@ -79,17 +75,17 @@ class _LoginPageState extends State<LoginPage> {
                           filled: true),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
                     width: 125,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     child: TextButton(
-                      child: Text(
+                      child: const Text(
                         "Login",
                         style: TextStyle(color: Colors.blueGrey, fontSize: 20),
                       ),

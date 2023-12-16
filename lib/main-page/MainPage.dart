@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'MainPageUtils.dart';
@@ -15,7 +14,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/backround.jpg"),
             fit: BoxFit.cover,
@@ -31,7 +30,7 @@ class _MainPageState extends State<MainPage> {
                   width: 200,
                   height: 200,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 MainButton(
@@ -40,7 +39,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pushReplacementNamed(context, '/StudentsPage');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 35,
                 ),
                 MainButton(
@@ -49,7 +48,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pushReplacementNamed(context, '/EmplyeesPage');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 35,
                 ),
                 MainButton(
@@ -58,18 +57,18 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pushReplacementNamed(context, '/GuestsPage');
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 TextButton.icon(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, '/LoginPage');
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.logout,
                       color: Colors.black,
                     ),
-                    label: Row(
+                    label: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
@@ -86,6 +85,7 @@ class _MainPageState extends State<MainPage> {
               height: 200,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -109,7 +109,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         Padding(
                           padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+                              const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
                           child: Container(
                             width: 300,
                             height: 50,
@@ -120,7 +120,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         Padding(
                           padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+                              const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
                           child: Container(
                             width: 300,
                             height: 50,
@@ -134,7 +134,6 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             )
           ],
         ),

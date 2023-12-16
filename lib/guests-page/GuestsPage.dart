@@ -15,19 +15,19 @@ class _GuestsPageState extends State<GuestsPage> {
     return Scaffold(
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           FloatingActionButton(
             onPressed: () {
               Navigator.pushReplacementNamed(context, '/MainPage');
             },
-            child: Icon(Icons.arrow_back),
+            child: const Icon(Icons.arrow_back),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12)),
@@ -37,14 +37,14 @@ class _GuestsPageState extends State<GuestsPage> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(12),
                           bottomRight: Radius.circular(12)),
                       color: Colors.blue),
                   width: 130,
                   height: 130,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Guests",
                       style: TextStyle(
@@ -63,7 +63,7 @@ class _GuestsPageState extends State<GuestsPage> {
           children: [
             FloatingActionButton(
               onPressed: () {},
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -82,7 +82,7 @@ class _GuestsPageState extends State<GuestsPage> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 2,
         ),
         Container(
@@ -90,10 +90,10 @@ class _GuestsPageState extends State<GuestsPage> {
           alignment: Alignment.center,
           color: Colors.black,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        StudentGrid(
+        const StudentGrid(
             name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
       ]),
     );

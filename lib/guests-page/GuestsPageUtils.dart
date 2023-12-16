@@ -6,7 +6,7 @@ class GusetGrid extends StatelessWidget {
   final String license_number;
   final String car;
 
-  GusetGrid({
+  const GusetGrid({
     Key? key,
     required this.name,
     required this.ID,
@@ -23,11 +23,11 @@ class GusetGrid extends StatelessWidget {
           height: 60,
           width: 150,
           color: Colors.orangeAccent,
+          alignment: Alignment.center,
           child: Text(
             name,
-            style: TextStyle(color: Colors.black, fontSize: 30),
+            style: const TextStyle(color: Colors.black, fontSize: 30),
           ),
-          alignment: Alignment.center,
         ),
       ),
       Padding(
@@ -36,11 +36,11 @@ class GusetGrid extends StatelessWidget {
           height: 60,
           width: 150,
           color: Colors.orangeAccent,
+          alignment: Alignment.center,
           child: Text(
             ID,
-            style: TextStyle(color: Colors.black, fontSize: 30),
+            style: const TextStyle(color: Colors.black, fontSize: 30),
           ),
-          alignment: Alignment.center,
         ),
       ),
       Padding(
@@ -49,11 +49,11 @@ class GusetGrid extends StatelessWidget {
           height: 60,
           width: 150,
           color: Colors.orangeAccent,
+          alignment: Alignment.center,
           child: Text(
             license_number,
-            style: TextStyle(color: Colors.black, fontSize: 25),
+            style: const TextStyle(color: Colors.black, fontSize: 25),
           ),
-          alignment: Alignment.center,
         ),
       ),
       Padding(
@@ -62,11 +62,11 @@ class GusetGrid extends StatelessWidget {
           height: 60,
           width: 150,
           color: Colors.orangeAccent,
+          alignment: Alignment.center,
           child: Text(
             car,
-            style: TextStyle(color: Colors.black, fontSize: 30),
+            style: const TextStyle(color: Colors.black, fontSize: 30),
           ),
-          alignment: Alignment.center,
         ),
       ),
     ]);

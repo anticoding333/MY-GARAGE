@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:desktopapp/students-page/StudentsPageUtils.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as Path;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -18,7 +17,7 @@ class _StudentsPageState extends State<StudentsPage> {
   DataBaseHelper db = DataBaseHelper.instance;
 
   List<StudentCar> students_info = [
-    StudentCar(name: "name", ID: "ID", li_num: "li_num", car: "car")
+    StudentCar(name: "name", id: "id", liNum: "liNum", car: "car")
   ];
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class _StudentsPageState extends State<StudentsPage> {
         future: db.getCards(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Scaffold(
+            return const Scaffold(
               body: Center(
                 child: Text("An error occured"),
               ),
@@ -39,19 +38,19 @@ class _StudentsPageState extends State<StudentsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       FloatingActionButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(context, '/MainPage');
                         },
-                        child: Icon(Icons.arrow_back),
+                        child: const Icon(Icons.arrow_back),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0),
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(12),
                                   bottomRight: Radius.circular(12)),
@@ -62,14 +61,14 @@ class _StudentsPageState extends State<StudentsPage> {
                             padding: const EdgeInsets.only(
                                 left: 8, right: 8, bottom: 8),
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(12),
                                       bottomRight: Radius.circular(12)),
                                   color: Colors.blue),
                               width: 130,
                               height: 130,
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "Students",
                                   style: TextStyle(
@@ -88,7 +87,7 @@ class _StudentsPageState extends State<StudentsPage> {
                       children: [
                         FloatingActionButton(
                           onPressed: () {},
-                          child: Icon(Icons.add),
+                          child: const Icon(Icons.add),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -108,7 +107,7 @@ class _StudentsPageState extends State<StudentsPage> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 2,
                     ),
                     Container(
@@ -116,104 +115,116 @@ class _StudentsPageState extends State<StudentsPage> {
                       alignment: Alignment.center,
                       color: Colors.black,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    CircularProgressIndicator()
+                    const CircularProgressIndicator()
                   ]),
             );
           }
-          if (snapshot.hasData) {
-            students_info.addAll(snapshot.data!);
-          }
 
-          return Scaffold(
-            body:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                SizedBox(
-                  width: 15,
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/MainPage');
-                  },
-                  child: Icon(Icons.arrow_back),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12)),
-                        color: Colors.orange),
-                    width: 200,
-                    height: 90,
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(12),
-                                bottomRight: Radius.circular(12)),
-                            color: Colors.blue),
-                        width: 130,
-                        height: 130,
-                        child: Center(
-                          child: Text(
-                            "Students",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold),
+          if (snapshot.hasData) {
+            return Scaffold(
+              body: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      FloatingActionButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/MainPage');
+                        },
+                        child: const Icon(Icons.arrow_back),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12),
+                                  bottomRight: Radius.circular(12)),
+                              color: Colors.orange),
+                          width: 200,
+                          height: 90,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 8, right: 8, bottom: 8),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(12),
+                                      bottomRight: Radius.circular(12)),
+                                  color: Colors.blue),
+                              width: 130,
+                              height: 130,
+                              child: const Center(
+                                child: Text(
+                                  "Students",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-              ]),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  FloatingActionButton(
-                    onPressed: () {
-                      show();
-                    },
-                    child: Icon(Icons.add),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(30))),
-                      width: 300,
-                      height: 50,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          fillColor: Colors.grey.shade100,
-                          filled: true,
+                    ]),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        FloatingActionButton(
+                          onPressed: () {
+                            show();
+                          },
+                          child: const Icon(Icons.add),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30))),
+                            width: 300,
+                            height: 50,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 2,
-              ),
-              Container(
-                height: 1,
-                alignment: Alignment.center,
-                color: Colors.black,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-            ]),
-          );
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    Container(
+                      height: 1,
+                      alignment: Alignment.center,
+                      color: Colors.black,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    ListView(
+                      children: snapshot.data!
+                          .map((e) => StudentGrid(
+                              name: e.name!,
+                              ID: e.id!,
+                              license_number: e.liNum!,
+                              car: e.car!))
+                          .toList(),
+                    )
+                  ]),
+            );
+          } else {
+            return Scaffold(body: Center(child: CircularProgressIndicator()));
+          }
         });
   }
 
@@ -252,13 +263,13 @@ class _StudentsPageState extends State<StudentsPage> {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text("Cancel"),
+              child: const Text("Cancel"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text("Add"),
+              child: const Text("Add"),
               onPressed: () async {
                 String? id = idController.text;
                 String? name = nameController.text;
@@ -267,7 +278,7 @@ class _StudentsPageState extends State<StudentsPage> {
 
                 DataBaseHelper db = DataBaseHelper.instance;
                 db.add(StudentCar(
-                    name: name, ID: id, li_num: licenseNumber, car: car));
+                    name: name, id: id, liNum: licenseNumber, car: car));
 
                 setState(() {});
                 Navigator.of(context).pop();
@@ -285,23 +296,22 @@ class DataBaseHelper {
   static final DataBaseHelper instance = DataBaseHelper._private();
 
   static Database? _database;
+
   Future<Database> get database async => _database ?? await _initDatabase();
 
   Future<Database> _initDatabase() async {
-    // Initialize FFI bindings for sqflite_common_ffi
     sqfliteFfiInit();
-
-    // Ensure the databaseFactory is set to ffi
+    // Explicitly set the database factory to ffi
     databaseFactory = databaseFactoryFfi;
 
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     String path = Path.join(documentsDirectory.path, 'StudentCars.db');
-
+    print("Database Path: $path");
     return await openDatabase(path, version: 1, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
-    await db.execute('''CREATE TABLE StudentCars(
+    await db.execute('''CREATE TABLE StudentCars (
       id INTEGER PRIMARY KEY,
       name TEXT,
       li_num TEXT,
@@ -311,17 +321,17 @@ class DataBaseHelper {
 
   Future<List<StudentCar>> getCards() async {
     Database db = await instance.database;
-    var CreditCards = await db.query('StudentCars', orderBy: 'id');
-    List<StudentCar> CreditCardList = CreditCards.isNotEmpty
-        ? CreditCards.map((e) => StudentCar.fromMap(e)).toList()
+    var result = await db.query('StudentCars', orderBy: 'id');
+    List<StudentCar> studentCarsList = result.isNotEmpty
+        ? result.map((e) => StudentCar.fromMap(e)).toList()
         : [];
-
-    return CreditCardList;
+    return studentCarsList;
   }
 
-  Future<int> add(StudentCar card) async {
+  Future<int> add(StudentCar studentCar) async {
     Database db = await instance.database;
-    return await db.insert("StudentCars", card.toMap());
+    int id = await db.insert("StudentCars", studentCar.toMap());
+    return id;
   }
 
   Future<int> remove(int id) async {
@@ -331,25 +341,33 @@ class DataBaseHelper {
 }
 
 class StudentCar {
-  String name;
-  String ID;
-  String li_num;
-  String car;
+  String? name;
+  String? id; // Assuming id is a String, adjust if it's an integer
+  String? liNum; // Updated to camelCase
+  String? car;
 
-  StudentCar(
-      {required this.name,
-      required this.ID,
-      required this.li_num,
-      required this.car}) {}
+  StudentCar({
+    this.name,
+    this.id,
+    this.liNum,
+    this.car,
+  });
 
   factory StudentCar.fromMap(Map<String, dynamic> json) {
     return StudentCar(
-        name: json["name"],
-        ID: json["ID"],
-        li_num: json["li_num"],
-        car: json["car"]);
+      name: json["name"],
+      id: json["id"],
+      liNum: json["li_num"],
+      car: json["car"],
+    );
   }
 
-  Map<String, dynamic> toMap() =>
-      {"name": name, "ID": ID, "li_num": li_num, "car": car};
+  Map<String, dynamic> toMap() {
+    return {
+      "name": name,
+      "id": id,
+      "li_num": liNum,
+      "car": car,
+    };
+  }
 }
