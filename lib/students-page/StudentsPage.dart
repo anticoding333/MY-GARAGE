@@ -17,9 +17,8 @@ class StudentsPage extends StatefulWidget {
 class _StudentsPageState extends State<StudentsPage> {
   DataBaseHelper db = DataBaseHelper.instance;
 
-  List<Widget> students_info = [
-    StudentGrid(
-        name: 'Name', ID: 'ID', license_number: 'License.No#', car: 'Car')
+  List<StudentCar> students_info = [
+    StudentCar(name: "name", ID: "ID", li_num: "li_num", car: "car")
   ];
   @override
   Widget build(BuildContext context) {
@@ -120,9 +119,14 @@ class _StudentsPageState extends State<StudentsPage> {
                     SizedBox(
                       height: 10,
                     ),
+                    CircularProgressIndicator()
                   ]),
             );
           }
+          if (snapshot.hasData) {
+            students_info.addAll(snapshot.data!);
+          }
+
           return Scaffold(
             body:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -175,7 +179,9 @@ class _StudentsPageState extends State<StudentsPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      show();
+                    },
                     child: Icon(Icons.add),
                   ),
                   Padding(
@@ -282,14 +288,21 @@ class DataBaseHelper {
   Future<Database> get database async => _database ?? await _initDatabase();
 
   Future<Database> _initDatabase() async {
+    // Initialize FFI bindings for sqflite_common_ffi
+    sqfliteFfiInit();
+
+    // Ensure the databaseFactory is set to ffi
+    databaseFactory = databaseFactoryFfi;
+
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     String path = Path.join(documentsDirectory.path, 'StudentCars.db');
+
     return await openDatabase(path, version: 1, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
     await db.execute('''CREATE TABLE StudentCars(
-      ID TEXT PRIMARY KEY,
+      id INTEGER PRIMARY KEY,
       name TEXT,
       li_num TEXT,
       car TEXT
