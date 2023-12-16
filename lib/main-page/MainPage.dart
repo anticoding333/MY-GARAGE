@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'MainPageUtils.dart';
 
@@ -48,7 +50,7 @@ class _MainPageState extends State<MainPage> {
                   },
                 ),
                 SizedBox(
-                  width: 25,
+                  width: 35,
                 ),
                 MainButton(
                   name: "Guests",
@@ -56,6 +58,26 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pushReplacementNamed(context, '/GuestsPage');
                   },
                 ),
+                SizedBox(
+                  width: 10,
+                ),
+                TextButton.icon(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/LoginPage');
+                    },
+                    icon: Icon(
+                      Icons.logout,
+                      color: Colors.black,
+                    ),
+                    label: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Logout",
+                          style: TextStyle(color: Colors.black),
+                        )
+                      ],
+                    ))
               ],
             ),
             Image.asset(
